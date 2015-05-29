@@ -1,8 +1,0 @@
-I perform the prediction by splitting the MNIST dataset(totally 42000 instances) into training data (38000 instances) and testing data (4000 instances) randomly.  By building the model from Google Prediction API on the training, the accuracy is 91%, and the prediction accuracy based on the testing data is around 91%, which both are unexpectedly low.
-Since MNIST is classic machine learning dataset, levels of success can be found at (http://yann.lecun.com/exdb/mnist/index.html)   
-From this reference, we can see that 10% error rate is nearly poorest performance among all the methods. There may have a few reasons behind it:
-1.	The data is not preprocessing.  We all know that some useful transformation of image data, such as registration, deskewing etc., could improve the prediction performance.  Maybe Google API prediction could add some preprocess data options.
-2.	Google API prediction based on training data set build a simple linear classifier, such LDA, SVM, etc.
-3.	There may have some threshold or criterion for the model building behind Google API prediction. For example, the model with 91% prediction accuracy is generally a good model. Google API will not continue building other models when this has happened
-4.	Comparing with different model, while small difference between prediction accuracy, of course, simple, interpretable model should be preferred. As specific, Google API prediction performs inbuilt model selection and we know linear classifier with some shrinkage method enjoys less model complexity.
-Above all, Google API prediction can perform prediction for generally usage or benchmark. However, it still has a lot of aspects to improve, especially for professional use.
