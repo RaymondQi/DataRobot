@@ -21,9 +21,12 @@ def main():
           p_key = json.load(f1)
           f1.close()
       ###get the client email and private key
+      
       Private_KEY = p_key['private_key']
       client_email = p_key['client_email']
+      
       ###Create Signed JWT Assertion Credential
+      
       scope = ['https://www.googleapis.com/auth/prediction']     
       credentials = SignedJwtAssertionCredentials(client_email, Private_KEY, scope =  scope)
      
